@@ -582,6 +582,9 @@ svg{
   font-size: var(--small-font-size);
   margin-top: 2rem;
  }
+ .footer__copy span{
+  color: var(--first-color);
+ }
 
  /* Scrollbar */
 
@@ -802,7 +805,7 @@ svg{
   }
 
   .about__container{
-    grid-template-columns: 550px 460px;
+    grid-template-columns: 500px 800px;
     column-gap: 4.5rem;
     padding-bottom: 1rem;
   }
