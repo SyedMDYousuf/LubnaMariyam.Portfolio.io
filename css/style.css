@@ -143,6 +143,10 @@ svg{
     color: var(--first-color);
 }
 
+.section__title span{
+  color: var(--first-color);
+}
+
 .main{
     overflow: hidden;   /* for animation scroll reveal */
 }
@@ -300,7 +304,7 @@ svg{
     padding: .5rem;
     color: var(--title-color);
     font-size: 1.5rem;
-    clip-path: polygon(100% 29%, 98% 27%, 48% 0%, 0% 26%, 0% 25%, 0% 73%, 47% 100%, 18% 100%, 35% 100%, 60% 100%, 76% 100%, 50% 100%, 100% 72%, 100% 29%); 
+    clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%, 0% 25%); 
     transition: transform .4s;  
  }
 
@@ -384,7 +388,7 @@ svg{
  }
 
  .skills__content{
-    grid-template-columns: repeat(2, max-content);
+    grid-template-columns: repeat(5, max-content);
     column-gap: 4rem;
     justify-content: center;
     align-items: baseline;
@@ -392,7 +396,7 @@ svg{
 
 .skills__group{
     row-gap: 1rem;
-    list-style: decimal-leading-zero;
+    /* list-style: decimal-leading-zero; */
 }
 
 .skills__item{
@@ -466,12 +470,18 @@ svg{
   height: 100%;
 }
 
+
 .projects__button{
   color: var(--title-color);
   display: flex;
   justify-content: center;
   column-gap: .5rem;
   font-weight: var(--font-medium);
+}
+
+.projects__button:hover{
+  transform: translateY(.25rem);
+  color: var(--first-color);
 }
 
 /* Contacts */
@@ -550,6 +560,7 @@ svg{
  .footer__social{
   display: flex;
   justify-content: center;
+  align-items: center;
   column-gap: 1.25rem;
  }
 
@@ -559,7 +570,7 @@ svg{
   padding: .5rem;
   color: var(--title-color);
   font-size: 1.5rem;
-  clip-path: polygon(100% 29%, 98% 27%, 48% 0%, 0% 26%, 0% 25%, 0% 73%, 47% 100%, 18% 100%, 35% 100%, 60% 100%, 76% 100%, 50% 100%, 100% 72%, 100% 29%);
+  clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%, 0% 25%);
   transition: transform .4s; 
  }
 
@@ -631,6 +642,13 @@ svg{
   }
  }
 
+ @media screen and (max-width:576px){
+  .skills__content{
+    grid-template-columns: max-content;
+    row-gap: 1rem;
+  }
+ }
+
  /* For medium devices */
  @media screen and (min-width: 576px){
   .home__container,
@@ -643,6 +661,8 @@ svg{
     grid-template-columns: 320px;
     justify-content: center;
   }
+  
+  
 }
 
 
@@ -653,8 +673,7 @@ svg{
   }
   
   .home__container,
-  .about__container,
-  .skills__container{
+  .about__container{
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
   }
@@ -684,6 +703,20 @@ svg{
   .projects__container{
     grid-template-columns: repeat(2, 352px);
   }
+
+  .projects__see_more{
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+  }
+
+  
+  .skills__content{
+    font-size: var(--small-font-size);
+    align-items: center;
+    margin-left: 5rem;
+    margin-top: 2rem;
+  } 
 }
 
 /* For large devices */
@@ -719,10 +752,24 @@ svg{
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px) ;
   }
+
+  .projects__see_more{
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+  }
+
+  .skills__content{
+    margin-top: 2rem;
+    margin-left: 30%;
+    column-gap: 6rem;
+    font-size: var(--normal-font-size);
+  }
 }
 
 @media screen and (min-width: 1152px) {
-  
+
+
   .section{
     margin-inline: auto;
   }
@@ -769,9 +816,13 @@ svg{
   }
 
   .skills__container{
-    grid-template-columns: 340px 425px;
-    column-gap: 10rem;
-    padding-bottom: 4rem;
+    /* grid-template-columns: 340px 425px; */
+    column-gap: 3rem;
+    /* padding-top: 2rem; */
+    padding-bottom: 3rem;
+    font-size: var(--normal-font-size);
+    align-items: center;
+    margin-right: 7rem;
   }
 
   .skills__description{
@@ -779,7 +830,9 @@ svg{
   }
 
   .skills__content{
+    margin-top: 2rem;
     column-gap: 8rem;
+    margin-left: 20rem;
   }
 
   .skills__group{
@@ -791,22 +844,30 @@ svg{
   }
 
   .services__container{
-    grid-template-columns: repeat(3, 440px);
+    grid-template-columns: repeat(3, 350px);
     padding-block: 3rem 4.5rem;
+    column-gap: 4rem;
   }
 
   .services__card{
-    padding: 4rem 2.5rem;
+    padding: 4rem 2rem 2rem 2rem;
+    
   }
 
   .projects__container{
-    grid-template-columns: repeat(3, 400px);
+    grid-template-columns: repeat(3, 350px);
     row-gap: 7rem;
     padding-block: 3rem 4.5rem;
   }
 
   .projects__card{
     height: 130%;
+  }
+
+  .projects__see_more{
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
   }
 
   .projects__button{
